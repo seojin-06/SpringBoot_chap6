@@ -51,7 +51,7 @@ class PlaneFinderPoller {
 		client.get()
 				.retrieve()
 				.bodyToFlux(Aircraft.class)
-				.filter(plane -> !plane.getReg().isempty())
+				.filter(plane -> !plane.getReg().isEmpty())
 				.toStream()
 				.forEach(repository::save);
 
